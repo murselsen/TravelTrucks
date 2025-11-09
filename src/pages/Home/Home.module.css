@@ -1,0 +1,74 @@
+.HomeArea {
+    width: 100vw;
+    color: black;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.HomeArea .HomeImage {
+    background: url("./66b3d74b24c0292d5f6fc639a2ab802af8888c21.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: scale(-1, 1);
+}
+
+.HomeArea .HomeContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #F7F7F7;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+}
+
+.HomeContent .Title {
+
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 48px;
+    line-height: 32px;
+    letter-spacing: 0%;
+    margin-bottom: 16px;
+}
+
+.HomeContent .SubTitle {
+
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0%;
+    margin-bottom: 40px;
+}
+
+.HomeContent .Btn {
+
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+
+    line-height: 24px;
+    letter-spacing: -0.5%;
+    vertical-align: middle;
+    background-color: #E44848;
+    padding: 16px 50px;
+    width: fit-content;
+    border-radius: 200px;
+    color: white;
+}
+
+.HomeContent .Btn:hover {
+    background-color: #D84343;
+    cursor: pointer;
+}

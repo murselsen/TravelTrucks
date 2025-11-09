@@ -1,0 +1,44 @@
+.Nav {
+    background-color: var(--color-inputs);
+    padding: 24px 64px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+}
+
+.Nav_Toggle {
+    display: none;
+    color: var(--color-main);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.Nav_Logo {
+    width: 136px;
+}
+
+.Nav_List {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    list-style: none;
+}
+
+.Nav_List .Nav_Link {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: var(--color-main);
+    text-decoration: none;
+}
+
+.Nav_List .Nav_Link.Active,
+.Nav_List .Nav_Link:hover {
+    color: var(--color-button-hover);
+}
