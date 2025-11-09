@@ -1,16 +1,64 @@
-# React + Vite
+# TravelTrucks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Kısa Açıklama
 
-Currently, two official plugins are available:
+TravelTrucks, karavan ve kamp araçları için geliştirilmiş modern bir katalog uygulamasıdır. Kullanıcıların çeşitli karavan türlerini keşfedebileceği, filtreleyebileceği ve detaylarını inceleyebileceği React tabanlı bir web platformudur.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Temel Özellikler
 
-## React Compiler
+- **Karavan Katalogı** - Geniş karavan ve kamp aracı koleksiyonu
+- **Filtreleme Sistemi** - Konum bazlı arama ve filtreleme
+- **Responsive Tasarım** - Tüm cihazlarda uyumlu görünüm
+- **Modern UI/UX** - Kullanıcı dostu arayüz tasarımı
+- **Redux State Management** - Merkezi durum yönetimi
+- **Lazy Loading** - Performans optimizasyonu
+- **React Router** - Sayfa navigasyonu
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Kurulum ve Kullanım Talimatları
 
-## Expanding the ESLint configuration
+### Gereksinimler
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 18 veya üzeri
+- npm veya yarn
+
+### Kurulum
+
+```bash
+# Projeyi klonlayın
+git clone https://github.com/murselsen/TravelTrucks.git
+
+# Proje dizinine gidin
+cd TravelTrucks
+
+# Bağımlılıkları yükleyin
+npm install
+
+# Geliştirme sunucusunu başlatın
+npm run dev
+```
+
+### Kullanılabilir Komutlar
+
+```bash
+# Development server
+npm run dev
+
+# Production build
+npm run build
+
+# Code linting
+npm run lint
+
+# Production preview
+npm run preview
+```
+
+### Tarayıcıda Görüntüleme
+
+Geliştirme sunucusu başladıktan sonra `http://localhost:5173` adresinden uygulamayı görüntüleyebilirsiniz.
+
+## Yazar Bilgisi
+
+**Geliştirici:** Mursel Sen  
+**GitHub:** [@murselsen](https://github.com/murselsen)  
+**Proje Repository:** [TravelTrucks](https://github.com/murselsen/TravelTrucks)
