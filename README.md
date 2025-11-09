@@ -1,6 +1,6 @@
 # TravelTrucks
 
-## Kısa Açıklama
+## Açıklama
 
 TravelTrucks, karavan ve kamp araçları için geliştirilmiş modern bir katalog uygulamasıdır. Kullanıcıların çeşitli karavan türlerini keşfedebileceği, filtreleyebileceği ve detaylarını inceleyebileceği React tabanlı bir web platformudur.
 
