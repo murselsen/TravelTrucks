@@ -9,4 +9,15 @@
     background-color: var(--color-white);
     display: flex;
     height: 100%;
+    gap: 64px;
+    padding: 48px 64px;
+    color: var(--color-main)
+}
+
+.Main .Sidebar {
+    flex: 1;
+}
+
+.Main .Content {
+    flex: 5;
 }

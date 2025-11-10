@@ -5,9 +5,17 @@ import { fetchCampers } from "./thunks.js";
 const campersSlice = createSlice({
   name: "campers",
   initialState: {
-    items: [],
+    data: {
+      items: [],
+      total: 0,
+      limit: 4,
+      page: 1,
+      favorites: [],
+    },
     filter: {
       location: "",
+      equipment: [],
+      type: "",
     },
     loading: false,
     error: null,
@@ -26,7 +34,7 @@ const campersSlice = createSlice({
     });
     builder.addCase(fetchCampers.fulfilled, (state, action) => {
       state.loading = false;
-      state.items = action.payload;
+      state.data = action.payload;
     });
     builder.addCase(fetchCampers.rejected, (state, action) => {
       state.loading = false;
