@@ -21,3 +21,22 @@ export const fetchCampers = createAsyncThunk(
     }
   }
 );
+
+export const moreFetchCampers = createAsyncThunk(
+  "campers/moreFetchCampers",
+  async (payload, thunkAPI) => {
+    try {
+      const currentPage = thunkAPI.getState().campers.data.page;
+      const limit = thunkAPI.getState().campers.data.limit;
+      const response = await axios.get("/", {
+        params: {
+          page: currentPage + 1,
+          limit: limit,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);
