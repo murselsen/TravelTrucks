@@ -1,7 +1,89 @@
 .Area {
     display: flex;
     flex-direction: column;
+    gap: 40px;
     width: 100%;
     height: 100%;
-    border: 1px solid var(--color-main);
+}
+
+.InputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: var(--color-inputs);
+}
+
+.InputWrapper .Group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 20px;
+}
+
+.InputWrapper .Group .Input {
+    background-color: transparent;
+    outline: none;
+    border: 0px;
+    color: var(--color-main);
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+
+.VehicleFilters {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.VehicleFilters .Title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: var(--color-main);
+}
+
+.EquipmentSelection {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 8px;
+}
+
+.EquipmentSelection .EquipmentItem {
+    min-width: 112px;
+    min-height: 64px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 1px solid var(--color-gray-light);
+    cursor: pointer;
+    user-select: none;
+}
+
+.EquipmentSelection input {
+    visibility: hidden;
+}
+
+
+.ApplyButton {
+    padding: 16px 57px;
+    background-color: var(--color-button);
+    width: fit-content;
+    border-radius: 200px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5%;
+    vertical-align: middle;
 }

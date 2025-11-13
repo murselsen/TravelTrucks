@@ -15,9 +15,9 @@
 }
 
 .Main .Sidebar {
-    flex: 2;
+    flex: 1;
 }
 
 .Main .Content {
-    flex: 6;
+    flex: 3;
 }
