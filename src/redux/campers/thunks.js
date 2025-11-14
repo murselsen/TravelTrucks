@@ -26,15 +26,51 @@ export const moreFetchCampers = createAsyncThunk(
   "campers/moreFetchCampers",
   async (payload, thunkAPI) => {
     try {
-      const currentPage = thunkAPI.getState().campers.data.page;
-      const limit = thunkAPI.getState().campers.data.limit;
-      const response = await axios.get("/", {
-        params: {
-          page: currentPage + 1,
-          limit: limit,
-        },
-      });
+      const filters = thunkAPI.getState().campers.filter;
+      const params = {
+        page: thunkAPI.getState().campers.data.page,
+        limit: thunkAPI.getState().campers.data.limit,
+      };
+
+      if (filters.location) {
+        params.location = filters.location;
+      }
+      if (filters.equipment) {
+        params[filters.equipment] = true;
+      }
+      if (filters.type) {
+        params.type = filters.type;
+      }
+      const response = await axios.get("/", { params });
+      
       return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const fetchCampersByFilter = createAsyncThunk(
+  "campers/fetchCampersByFilter",
+  async (filter, thunkAPI) => {
+    try {
+      const filters = thunkAPI.getState().campers.filter;
+      const params = {
+        page: thunkAPI.getState().campers.data.page,
+        limit: thunkAPI.getState().campers.data.limit,
+      };
+
+      if (filters.location) {
+        params.location = filters.location;
+      }
+      if (filters.equipment) {
+        params[filters.equipment] = true;
+      }
+      if (filters.type) {
+        params.type = filters.type;
+      }
+      const result = await axios.get("/", { params });
+      return result.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
     }

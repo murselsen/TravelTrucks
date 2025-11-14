@@ -14,11 +14,23 @@ import {
   Van,
 } from "../Icons/Icons";
 
+import { useDispatch, useSelector } from "react-redux";
+import { setFilter } from "../../redux/campers/slice.js";
+import { fetchCampersByFilter } from "../../redux/campers/thunks.js";
+
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const filters = useSelector((state) => state.campers.filter);
   return (
     <Formik
-      initialValues={{ equipment: "", location: "", type: "" }}
-      onSubmit={() => {}}
+      initialValues={filters}
+      onChange={() => {
+        console.log("changing");
+      }}
+      onSubmit={(values) => {
+        dispatch(setFilter(values));
+        dispatch(fetchCampersByFilter());
+      }}
     >
       <Form>
         <div className={Css.Area}>
@@ -45,78 +57,63 @@ const Sidebar = () => {
               <h3 className={Css.Title}>Vehicle Equipment</h3>
               <hr className={Css.Hr} />
               <div className={Css.EquipmentSelection}>
-                <label className={Css.EquipmentItem} htmlFor="ac">
+                <label className={Css.EquipmentItem}>
+                  <Field type="radio" name="equipment" value="AC" />
                   <AC />
                   <span className={Css.EquipmentItem_Title}>AC</span>
                 </label>
-                <label className={Css.EquipmentItem} htmlFor="engine">
+
+                <label className={Css.EquipmentItem}>
+                  <Field type="radio" name="equipment" value="engine" />
                   <Automatic />
                   <span className={Css.EquipmentItem_Title}>Automatic</span>
                 </label>
-                <label className={Css.EquipmentItem} htmlFor="kitchen">
+
+                <label className={Css.EquipmentItem}>
+                  <Field type="radio" name="equipment" value="kitchen" />
                   <Kitchen />
                   <span className={Css.EquipmentItem_Title}>Kitchen</span>
                 </label>
-                <label className={Css.EquipmentItem} htmlFor="tv">
+
+                <label className={Css.EquipmentItem}>
+                  <Field type="radio" name="equipment" value="TV" />
                   <TV />
                   <span className={Css.EquipmentItem_Title}>TV</span>
                 </label>
-                <label className={Css.EquipmentItem} htmlFor="bathroom">
+
+                <label className={Css.EquipmentItem}>
+                  <Field type="radio" name="equipment" value="bathroom" />
                   <Bathroom />
                   <span className={Css.EquipmentItem_Title}>Bathroom</span>
                 </label>
-                <Field type="radio" name="equipment" id="ac" value="ac" />
-                <Field
-                  type="radio"
-                  name="equipment"
-                  id="kitchen"
-                  value="kitchen"
-                />
-                <Field
-                  type="radio"
-                  name="equipment"
-                  id="engine"
-                  value="automatic"
-                />
-                <Field type="radio" name="equipment" id="tv" value="tv" />
-                <Field
-                  type="radio"
-                  name="equipment"
-                  id="bathroom"
-                  value="bathroom"
-                />
               </div>
             </div>
             <div className={Css.VehicleFilters}>
-              <h3 className={Css.Title}>Vehicle Equipment</h3>
+              <h3 className={Css.Title}>Vehicle Type</h3>
               <hr className={Css.Hr} />
               <div className={Css.EquipmentSelection}>
-                <label className={Css.EquipmentItem} htmlFor="van">
+                <label className={Css.EquipmentItem}>
+                  <Field type="radio" name="type" value="van" />
                   <Van />
                   <span className={Css.EquipmentItem_Title}>Van</span>
                 </label>
-                <label className={Css.EquipmentItem} htmlFor="integrated">
+
+                <label className={Css.EquipmentItem}>
+                  <Field type="radio" name="type" value="integrated" />
                   <Integrated />
                   <span className={Css.EquipmentItem_Title}>
                     Fully Integrated
                   </span>
                 </label>
-                <label className={Css.EquipmentItem} htmlFor="alcove">
+
+                <label className={Css.EquipmentItem}>
+                  <Field type="radio" name="type" value="alcove" />
                   <Alcove />
                   <span className={Css.EquipmentItem_Title}>Alcove</span>
                 </label>
-                <Field type="radio" name="type" id="van" value="van" />
-                <Field
-                  type="radio"
-                  name="type"
-                  id="integrated"
-                  value="integrated"
-                />
-                <Field type="radio" name="type" id="alcove" value="alcove" />
               </div>
             </div>
           </Filters>
-
           <button type="submit" className={Css.ApplyButton}>
             Search
           </button>

@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { fetchCampers, moreFetchCampers } from "./thunks.js";
+import {
+  fetchCampers,
+  moreFetchCampers,
+  fetchCampersByFilter,
+} from "./thunks.js";
 
 const campersSlice = createSlice({
   name: "campers",
@@ -14,7 +18,7 @@ const campersSlice = createSlice({
     },
     filter: {
       location: "",
-      equipment: [],
+      equipment: "",
       type: "",
     },
     loading: false,
@@ -55,7 +59,21 @@ const campersSlice = createSlice({
       .addCase(moreFetchCampers.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+      .addCase(fetchCampersByFilter.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchCampersByFilter.fulfilled, (state, action) => {
+        state.loading = false;
+        state.data.items = action.payload.items;
+        state.data.total = action.payload.total;
+      })
+      .addCase(fetchCampersByFilter.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
       });
   },
 });
+export const { setFilter } = campersSlice.actions;
 export default campersSlice.reducer;

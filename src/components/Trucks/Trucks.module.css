@@ -21,8 +21,7 @@
 }
 
 .Image {
-    /* flex: 1; */
-    width: 650px;
+    width: 35%;
     border-radius: 10px;
 }
 
