@@ -36,13 +36,18 @@ export const moreFetchCampers = createAsyncThunk(
         params.location = filters.location;
       }
       if (filters.equipment) {
-        params[filters.equipment] = true;
+        const equipmentKeys = Object.keys(filters.equipment);
+        equipmentKeys.forEach((key) => {
+          if (filters.equipment[key]) {
+            params[key] = true;
+          }
+        });
       }
       if (filters.type) {
         params.type = filters.type;
       }
       const response = await axios.get("/", { params });
-      
+
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);

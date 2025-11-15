@@ -14,9 +14,7 @@ import Css from "./Trucks.module.css";
 const TruckList = () => {
   const dispatch = useDispatch();
   const { loading, error, data } = useSelector((state) => state.campers);
-  useEffect(() => {
-    dispatch(fetchCampers());
-  }, [dispatch]);
+  ;
 
   const handleLoadMore = () => {
     dispatch(moreFetchCampers());

@@ -1,0 +1,77 @@
+.Page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.Content {
+    flex: 1;
+    background-color: var(--color-white);
+    color: var(--color-main);
+    padding: 48px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.Header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.Header .Title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0%;
+}
+
+
+.Header .SubTitle {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.Header .SubTitle .Reviews,
+.Header .SubTitle .Location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    color: var(--color-secondary);
+}
+
+.Header .Price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0%;
+    margin-top: 16px;
+}
+
+.Body {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.Body .Gallery {
+    display: flex;
+    gap: 48px;
+    justify-content: space-between;
+}
+
+.Body .Gallery .GalleryItem {
+    min-width: 292px;
+    min-height: 312px;
+}
+
+.Body .Description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+}

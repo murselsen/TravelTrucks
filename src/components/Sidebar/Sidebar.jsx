@@ -58,31 +58,35 @@ const Sidebar = () => {
               <hr className={Css.Hr} />
               <div className={Css.EquipmentSelection}>
                 <label className={Css.EquipmentItem}>
-                  <Field type="radio" name="equipment" value="AC" />
+                  <Field type="checkbox" name="equipment" value="AC" />
                   <AC />
                   <span className={Css.EquipmentItem_Title}>AC</span>
                 </label>
 
                 <label className={Css.EquipmentItem}>
-                  <Field type="radio" name="equipment" value="engine" />
+                  <Field
+                    type="checkbox"
+                    name="equipment.engine"
+                    value={"automatic"}
+                  />
                   <Automatic />
                   <span className={Css.EquipmentItem_Title}>Automatic</span>
                 </label>
 
                 <label className={Css.EquipmentItem}>
-                  <Field type="radio" name="equipment" value="kitchen" />
+                  <Field type="checkbox" name="equipment" value="kitchen" />
                   <Kitchen />
                   <span className={Css.EquipmentItem_Title}>Kitchen</span>
                 </label>
 
                 <label className={Css.EquipmentItem}>
-                  <Field type="radio" name="equipment" value="TV" />
+                  <Field type="checkbox" name="equipment" value="TV" />
                   <TV />
                   <span className={Css.EquipmentItem_Title}>TV</span>
                 </label>
 
                 <label className={Css.EquipmentItem}>
-                  <Field type="radio" name="equipment" value="bathroom" />
+                  <Field type="checkbox" name="equipment" value="bathroom" />
                   <Bathroom />
                   <span className={Css.EquipmentItem_Title}>Bathroom</span>
                 </label>
