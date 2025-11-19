@@ -1,0 +1,170 @@
+.Page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.Content {
+    flex: 1;
+    background-color: var(--color-white);
+    color: var(--color-main);
+    padding: 48px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.Header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.Header .Title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0%;
+}
+
+
+.Header .SubTitle {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.Header .SubTitle .Reviews,
+.Header .SubTitle .Location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    color: var(--color-secondary);
+}
+
+.Header .Price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0%;
+    margin-top: 16px;
+}
+
+.Body {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.Body .Description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+}
+
+.Body .Gallery {
+    display: flex;
+    gap: 48px;
+    justify-content: space-between;
+}
+
+.Body .Gallery .GalleryItem {
+    flex: 1;
+}
+
+.Body .Gallery .GalleryItem .original {
+    border-radius: 12px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    z-index: -1;
+
+}
+
+.Body .Description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+}
+
+.Body .TabsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 60px;
+}
+
+.TabsContainer .TabList {
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    gap: 40px;
+}
+
+.TabsContainer .TabList .TabItem {
+    padding-bottom: 19px;
+    cursor: pointer;
+}
+
+.TabsContainer .TabList .TabItem.Active {
+    border-bottom: 3px solid var(--color-button);
+}
+
+.TabsContainer .TabList .TabItem .Title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+}
+
+.TabsContainer .TabList .TabItem:hover {
+    border-bottom: 3px solid var(--color-button-hover);
+    font-weight: 600;
+}
+
+.TabsContainer .TabContainer {
+    display: flex;
+    padding-top: 44px;
+    gap: 40px;
+}
+
+.TabsContainer .TabContainer .TabColumn {
+    flex: 1;
+    height: 100%;
+    padding: 44px 52px;
+    /* border: 1px solid var(--color-main); */
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.TabsContainer .TabContainer .TabColumn .EquipmentList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.TabsContainer .TabContainer .TabColumn .Note {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.Note .List {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.Note .List .Item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
