@@ -18,6 +18,10 @@ const ReservationForm = () => {
           date: "",
           comment: "",
         }}
+        onSubmit={(values, { resetForm }) => {
+          alert("Message sent!");
+          resetForm();
+        }}
       >
         <Form className={Css.Form}>
           <Field
@@ -30,7 +34,7 @@ const ReservationForm = () => {
             className={Css.InputField}
             name="email"
             type="email"
-            placeholder="Email*"
+            placeholder="Email"
             required
           />
           <Field

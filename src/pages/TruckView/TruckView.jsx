@@ -21,6 +21,7 @@ import {
   Water,
 } from "../../components/Icons/Icons";
 import ReservationForm from "../../components/ReservationForm/ReservationForm";
+import Reviews from "../../components/Reviews/Reviews";
 const TruckView = () => {
   const [activeTab, setActiveTab] = useState("features");
 
@@ -177,8 +178,7 @@ const TruckView = () => {
             {activeTab === "reviews" && (
               <div className={Css.TabContainer}>
                 <div className={Css.TabColumn}>
-                  <h1>Reviews</h1>
-                  <div>No reviews yet.</div>
+                  <Reviews data={truckData.reviews} />
                 </div>
                 <div
                   className={Css.TabColumn}
