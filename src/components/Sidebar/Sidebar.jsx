@@ -97,7 +97,7 @@ const Sidebar = () => {
               <hr className={Css.Hr} />
               <div className={Css.EquipmentSelection}>
                 <label className={Css.EquipmentItem}>
-                  <Field type="radio" name="type" value="van" />
+                  <Field type="radio" name="type" value="paneltruck" />
                   <Van />
                   <span className={Css.EquipmentItem_Title}>Van</span>
                 </label>

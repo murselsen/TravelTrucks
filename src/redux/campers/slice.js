@@ -12,10 +12,10 @@ const campersSlice = createSlice({
     data: {
       items: [],
       total: 0,
-      limit: 4,
-      page: 1,
-      favorites: [],
     },
+    limit: 4,
+    page: 1,
+    favorites: [],
     filter: {
       location: "",
       equipment: {
@@ -47,6 +47,7 @@ const campersSlice = createSlice({
         state.loading = false;
         state.data.items = action.payload.items;
         state.data.total = action.payload.total;
+        state.page = 2;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.loading = false;
@@ -58,7 +59,7 @@ const campersSlice = createSlice({
       })
       .addCase(moreFetchCampers.fulfilled, (state, action) => {
         state.loading = false;
-        state.data.page += 1;
+        state.page += 1;
         state.data.items = [...state.data.items, ...action.payload.items];
         state.data.total = action.payload.total;
       })

@@ -1,0 +1,53 @@
+.ReviewItem {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.ReviewItem .Header {
+    display: flex;
+    gap: 16px;
+}
+
+.ReviewItem .Header .ProfilePicture {
+    text-align: center;
+    align-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: var(--color-button);
+    font-weight: 600;
+    background-color: var(--color-badges);
+}
+
+.ReviewItem .Header .UserInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.ReviewItem .Header .UserInfo .UserName {
+
+    font-weight: 500;
+
+    font-size: 16px;
+
+    line-height: 24px;
+    letter-spacing: 0%;
+}
+
+.ReviewItem .Header .UserInfo .Star {
+    font-size: 16px;
+    color: var(--color-rating);
+}
+
+.ReviewItem .Content .Text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: var(--color-main);
+}

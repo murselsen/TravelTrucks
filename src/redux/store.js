@@ -6,8 +6,6 @@ import localStorage from "redux-persist/es/storage";
 const persistConfig = {
   key: "root",
   storage: localStorage,
-
-  whitelist: ["data", "filter"],
 };
 
 const persistedReducer = persistReducer(persistConfig, campersReducer);
