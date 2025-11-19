@@ -1,0 +1,31 @@
+.FormContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.FormContainer .Form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.Form .InputField {
+    padding: 18px;
+    border-radius: 20px;
+    background-color: var(--color-inputs);
+    border: none;
+    font-size: 16px;
+    color: var(--color-gray)
+}
+
+.Form .SubmitButton {
+    align-self: center;
+    width: fit-content;
+    padding: 16px 63px;
+    background-color: var(--color-button-hover);
+    color: var(--color-white);
+    border: none;
+    border-radius: 200px;
+}

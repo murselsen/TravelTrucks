@@ -89,7 +89,12 @@ const TruckView = () => {
             </ul>
             {activeTab === "features" && (
               <div className={Css.TabContainer}>
-                <div className={Css.TabColumn}>
+                <div
+                  className={Css.TabColumn}
+                  style={{
+                    backgroundColor: "var(--color-inputs)",
+                  }}
+                >
                   <ul className={Css.EquipmentList}>
                     {truckData.transmission === "automatic" && (
                       <EquipmentItem icon={<Automatic />} title={"Automatic"} />
@@ -159,7 +164,12 @@ const TruckView = () => {
                     </ul>
                   </div>
                 </div>
-                <div className={Css.TabColumn}>
+                <div
+                  className={Css.TabColumn}
+                  style={{
+                    border: "1px solid var(--color-gray-light)",
+                  }}
+                >
                   <ReservationForm />
                 </div>
               </div>
@@ -170,7 +180,12 @@ const TruckView = () => {
                   <h1>Reviews</h1>
                   <div>No reviews yet.</div>
                 </div>
-                <div className={Css.TabColumn}>
+                <div
+                  className={Css.TabColumn}
+                  style={{
+                    border: "1px solid var(--color-gray-light)",
+                  }}
+                >
                   <ReservationForm />
                 </div>
               </div>
