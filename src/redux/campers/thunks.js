@@ -44,6 +44,7 @@ export const moreFetchCampers = createAsyncThunk(
       //     }
       //   });
       // }
+      //  Simplified equipment filtering to include all selected equipment
       if (filters.type !== "") {
         params.form = filters.type;
       }
