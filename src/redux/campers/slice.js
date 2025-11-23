@@ -18,13 +18,12 @@ const campersSlice = createSlice({
     favorites: [],
     filter: {
       location: "",
-      equipment: {
-        AC: false,
-        automatic: false,
-        kitchen: false,
-        TV: false,
-        bathroom: false,
-      },
+
+      AC: false,
+      automatic: false,
+      kitchen: false,
+      TV: false,
+      bathroom: false,
       type: "",
     },
     loading: false,

@@ -35,16 +35,7 @@ export const moreFetchCampers = createAsyncThunk(
       if (filters.location) {
         params.location = filters.location;
       }
-      // if (filters.equipment) {
-      //   const equipmentKeys = Object.keys(filters.equipment);
-
-      //   equipmentKeys.forEach((key) => {
-      //     if (filters.equipment[key]) {
-      //       params[key] = true;
-      //     }
-      //   });
-      // }
-      //  Simplified equipment filtering to include all selected equipment
+     
       if (filters.type !== "") {
         params.form = filters.type;
       }
