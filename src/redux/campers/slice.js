@@ -18,12 +18,7 @@ const campersSlice = createSlice({
     favorites: [],
     filter: {
       location: "",
-
-      AC: false,
-      automatic: false,
-      kitchen: false,
-      TV: false,
-      bathroom: false,
+      equipment: [],
       type: "",
     },
     loading: false,
@@ -45,11 +40,14 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
         state.data.items = action.payload.items;
-        state.data.total = action.payload.total;
+        state.data.total = action.payload.items.length;
         state.page = 2;
+        state.filter = { location: "", equipment: [], type: "" };
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.loading = false;
+        state.data.items = [];
+        state.data.total = 0;
         state.error = action.payload;
       })
       .addCase(moreFetchCampers.pending, (state) => {
@@ -60,10 +58,15 @@ const campersSlice = createSlice({
         state.loading = false;
         state.page += 1;
         state.data.items = [...state.data.items, ...action.payload.items];
-        state.data.total = action.payload.total;
+        state.data.total = [
+          ...state.data.items,
+          ...action.payload.items,
+        ].length;
       })
       .addCase(moreFetchCampers.rejected, (state, action) => {
         state.loading = false;
+        state.data.items = [];
+        state.data.total = 0;
         state.error = action.payload;
       })
       .addCase(fetchCampersByFilter.pending, (state) => {

@@ -27,9 +27,10 @@ const Sidebar = () => {
       onChange={() => {
         console.log("changing");
       }}
-      onSubmit={(values) => {
+      onSubmit={(values, actions) => {
         dispatch(setFilter(values));
         dispatch(fetchCampersByFilter());
+        actions.setValues(values);
       }}
     >
       <Form>
@@ -64,11 +65,7 @@ const Sidebar = () => {
                 </label>
 
                 <label className={Css.EquipmentItem}>
-                  <Field
-                    type="checkbox"
-                    name="equipment.engine"
-                    value={"automatic"}
-                  />
+                  <Field type="checkbox" name="equipment" value={"automatic"} />
                   <Automatic />
                   <span className={Css.EquipmentItem_Title}>Automatic</span>
                 </label>
@@ -97,7 +94,7 @@ const Sidebar = () => {
               <hr className={Css.Hr} />
               <div className={Css.EquipmentSelection}>
                 <label className={Css.EquipmentItem}>
-                  <Field type="radio" name="type" value="paneltruck" />
+                  <Field type="radio" name="type" value="Van" />
                   <Van />
                   <span className={Css.EquipmentItem_Title}>Van</span>
                 </label>
