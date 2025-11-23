@@ -40,7 +40,7 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
         state.data.items = action.payload.items;
-        state.data.total = action.payload.items.length;
+        state.data.total = action.payload.total;
         state.page = 2;
         state.filter = { location: "", equipment: [], type: "" };
       })
@@ -58,10 +58,7 @@ const campersSlice = createSlice({
         state.loading = false;
         state.page += 1;
         state.data.items = [...state.data.items, ...action.payload.items];
-        state.data.total = [
-          ...state.data.items,
-          ...action.payload.items,
-        ].length;
+        state.data.total = action.payload.total;
       })
       .addCase(moreFetchCampers.rejected, (state, action) => {
         state.loading = false;
@@ -80,6 +77,8 @@ const campersSlice = createSlice({
       })
       .addCase(fetchCampersByFilter.rejected, (state, action) => {
         state.loading = false;
+        state.data.items = [];
+        state.data.total = 0;
         state.error = action.payload;
       });
   },

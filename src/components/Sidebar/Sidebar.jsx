@@ -94,13 +94,13 @@ const Sidebar = () => {
               <hr className={Css.Hr} />
               <div className={Css.EquipmentSelection}>
                 <label className={Css.EquipmentItem}>
-                  <Field type="radio" name="type" value="Van" />
+                  <Field type="radio" name="type" value="panelTruck" />
                   <Van />
                   <span className={Css.EquipmentItem_Title}>Van</span>
                 </label>
 
                 <label className={Css.EquipmentItem}>
-                  <Field type="radio" name="type" value="integrated" />
+                  <Field type="radio" name="type" value="fullyIntegrated" />
                   <Integrated />
                   <span className={Css.EquipmentItem_Title}>
                     Fully Integrated
