@@ -8,6 +8,7 @@ import { FaStar } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { BiEuro } from "react-icons/bi";
 import { IoMapOutline } from "react-icons/io5";
+import { FaRegHeart } from "react-icons/fa";
 
 import {
   AC,
@@ -22,6 +23,8 @@ import {
   Refrigerator,
   Water,
 } from "../Icons/Icons.jsx";
+
+import { useSelector } from "react-redux";
 
 const TruckItem = ({ data }) => {
   if (data !== null) {
@@ -41,7 +44,8 @@ const TruckItem = ({ data }) => {
                 <BiEuro /> {parseFloat(data.price).toFixed(2)}
               </span>
               <button className={Css.FavoriteButton}>
-                <FaHeart color="black" />
+                
+                <FaRegHeart size={23} color="black" />
               </button>
             </div>
             <div className={Css.SubTitle}>
