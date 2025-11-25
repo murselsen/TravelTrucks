@@ -24,9 +24,11 @@ import {
   Water,
 } from "../Icons/Icons.jsx";
 
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { addFavorite, removeFavorite } from "../../redux/campers/slice.js";
 const TruckItem = ({ data }) => {
+  const favorites = useSelector((state) => state.campers.favorites);
+  const dispatch = useDispatch();
   if (data !== null) {
     const { gallery, name, description, id, location } = data;
     return (
@@ -44,8 +46,21 @@ const TruckItem = ({ data }) => {
                 <BiEuro /> {parseFloat(data.price).toFixed(2)}
               </span>
               <button className={Css.FavoriteButton}>
-                
-                <FaRegHeart size={23} color="black" />
+                {favorites.includes(id) ? (
+                  <FaHeart
+                    size={23}
+                    color="red"
+                    title="Remove to Favorite"
+                    onClick={() => dispatch(removeFavorite(id))}
+                  />
+                ) : (
+                  <FaRegHeart
+                    size={23}
+                    color="black"
+                    title="Add to Favorite"
+                    onClick={() => dispatch(addFavorite(id))}
+                  />
+                )}
               </button>
             </div>
             <div className={Css.SubTitle}>
