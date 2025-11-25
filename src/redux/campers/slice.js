@@ -28,6 +28,12 @@ const campersSlice = createSlice({
     setFilter(state, action) {
       state.filter = action.payload;
     },
+    addFavorite(state, action) {
+      state.favorites.push(action.payload);
+    },
+    removeFavorite(state, action) {
+      state.favorites = state.favorites.filter(id => id !== action.payload);
+    },
   },
 
   extraReducers: (builder) => {
@@ -83,5 +89,5 @@ const campersSlice = createSlice({
       });
   },
 });
-export const { setFilter } = campersSlice.actions;
+export const { setFilter, addFavorite, removeFavorite } = campersSlice.actions;
 export default campersSlice.reducer;
